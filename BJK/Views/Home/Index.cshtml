@@ -1,4 +1,65 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link href="~/css/index.css" rel="stylesheet" asp-append-version="true" />
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+        <li data-target="#carousel" data-slide-to="5"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="caption-1">
+                <div class="caption-1_overlay">
+                    <img src="~/Images/logo/slider_logo.png" />
+                    <h3>Bhashkar Jyotish Kendra</h3>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="caption-2">
+                <img class="slide-img" src="~/Images/Carosel/4th-banner.jpg" />
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="caption-3">
+                <img class="slide-img" src="~/Images/Carosel/banner-img1.jpg" />
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="caption-4">
+                <img class="slide-img" src="~/Images/Carosel/Slider-02.png" />
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="caption-5">
+                <img class="slide-img" src="~/Images/Carosel/astrology.jpg" />
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="caption-6">
+                <img class="slide-img" src="~/Images/Carosel/imgpsh_fullsize_anim.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+<partial name="_HoroscopePartial" />
 <partial name="_AstrologersPartial" />
+<partial name="_AstrologyServicesPartial" />

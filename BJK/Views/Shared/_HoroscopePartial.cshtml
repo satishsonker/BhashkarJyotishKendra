@@ -1,0 +1,87 @@
+<style>
+    .horoscope {
+        margin-bottom: 30px;
+    }
+
+    .horoscope-item {
+        border: 1px solid black;
+        text-align: center;
+        padding: 10px 10px;
+        background: transparent;
+        cursor: pointer;
+    }
+    .horoscope-item >a{
+        text-decoration:none;
+        color:var(--theme-font-color);
+    }
+        .horoscope-item >a> img:hover {
+            transform: scale(1.2) rotate(10deg);
+            transition: .8s;
+        }
+
+        .horoscope-item >a> img {
+            transition: .8s;
+        }
+        .horoscope-item p:last-child {
+            font-size: 10px;
+        }
+
+        .horoscope-item p{
+            margin-bottom:1px !important;
+        }
+
+    .horoscope > .horoscope-heading {
+        border: 1px solid black;
+        border-bottom-color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .horoscope > .horoscope-heading > span {
+            position: absolute;
+            bottom: -15px;
+            background: black;
+            padding: 0 30px;
+            font-size: 25px;
+            left: calc(50% - 130px);
+        }
+
+    .horoscope, .horoscope > .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+</style>
+
+<div class="row horoscope">
+    <div class="col-12 horoscope-heading">
+        <span><i class="fas fa-star"></i> Your Horoscope <i class="fas fa-star"></i></span>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="row mlr0">
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=aries&feq=daily"><img src="~/Images/SunSigns/Aries.png" /><p>Aries</p><p>MAR 21 - APR 19</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Taurus&feq=daily"><img src="~/Images/SunSigns/Taurus.png" /><p>Taurus</p><p>APR 20 - MAY 20</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Gemini&feq=daily"><img src="~/Images/SunSigns/Gemini.png" /><p>Gemini</p><p>MAY 21 - JUN 20</p></a></div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="row mlr0">
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Cancer&feq=daily"><img src="~/Images/SunSigns/Cancer.png" /><p>Cancer</p><p>JUN 21 - JUL 22</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Leo&feq=daily"><img src="~/Images/SunSigns/Leo.png" /><p>Leo</p><p>JUL 23 - AUG 22</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Virgo&feq=daily"><img src="~/Images/SunSigns/Virgo.png"><p>Virgo</p><p>AUG 23 - SEP 22</p></a></div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="row mlr0">
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Libra&feq=daily"><img src="~/Images/SunSigns/Libra.png" /><p>Libra</p><p>SEP 23 - OCT 22</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Scorpio&feq=daily"><img src="~/Images/SunSigns/Scorpio.png" /><p>Scorpio</p><p>OCT 23 - NOV 21</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Sagittarius&feq=daily"><img src="~/Images/SunSigns/Sagittarius.png" /><p>Sagittarius</p><p>NOV 22 - DEC 21</p></a></div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="row mlr0">
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Capricornus&feq=daily"><img src="~/Images/SunSigns/Capricornus.png" /><p>Capricornus</p><p>DEC 22 - JAN 19</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Aquarius&feq=daily"><img src="~/Images/SunSigns/Aquarius.png" /><p>Aquarius</p><p>JAN 20 - FEB 18</p></a></div>
+            <div class="col-4 horoscope-item"><a href="/horoscope/getsunsign?sunsign=Pisces&feq=daily"><img src="~/Images/SunSigns/Pisces.png" /><p>Pisces</p><p>FEB 19 - MAR 20</p></a></div>
+        </div>
+    </div>
+</div>

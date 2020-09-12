@@ -177,12 +177,12 @@ body {
 }
 
 .stars {
-    background: #000 url(../images/stars.png) repeat top center;
+    background: #000 url(../images/logo/stars.png) repeat top center;
     
 }
 
 .twinkling {
-    background: transparent url(../images/twinkling.png) repeat top center;
+    background: transparent url(../images/logo/twinkling.png) repeat top center;
     -moz-animation: move-twink-back 200s linear infinite;
     -ms-animation: move-twink-back 200s linear infinite;
     -o-animation: move-twink-back 200s linear infinite;

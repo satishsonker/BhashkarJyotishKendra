@@ -1,0 +1,79 @@
+<style>
+    .services
+    {
+
+    }
+    .services-container
+    {
+        border:1px solid gray;
+        padding:5px;
+        border-radius:4px;
+    }
+    .services-container-inner {
+        height: 250px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-right: 8px;
+        margin-top: 10px;
+    }
+    .services-container img {
+        width: 100%;
+        height: 150px;
+        border-radius: 4px 4px 0 0;
+    }
+    .services-col {
+        padding: 10px;
+    }
+
+    .services-container-inner .list-group {
+        border-radius: 0;
+    }
+
+        .services-container-inner .list-group .list-group-item {
+            padding: 8px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .services-container-inner .list-group .list-group-item:hover{
+            background:var(--theme-color);
+            color:var(--theme-font-color);
+        }
+</style>
+<div class="container">
+    <div class="row services">
+        <div class="col-lg-4 col-md-6 col-sm-12 services-col">
+            <div class="services-container">
+                <img src="~/Images/Carosel/4th-banner.jpg" />
+                <div class="services-container-inner">
+                    <ul class="list-group">
+                        <li class="list-group-item">Aries - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Taurus - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Gemini - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Cancer - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Leo - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Virgo - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Libra - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Scorpio - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Sagittarius - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Capricornus - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Aquarius - @DateTime.Now.Year</li>
+                        <li class="list-group-item">Pisces - @DateTime.Now.Year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 services-col">
+            <div class="services-container">
+                <img src="~/Images/Carosel/4th-banner.jpg" />
+                <div class="services-container-inner"></div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 services-col">
+            <div class="services-container">
+                <img src="~/Images/Carosel/4th-banner.jpg" />
+                <div class="services-container-inner"></div>
+            </div>
+        </div>
+    </div>
+</div>
