@@ -1,0 +1,81 @@
+<style>
+    .fest-item {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 13px;
+        color: var(--theme-font-color);
+    }
+
+        .fest-item li {
+            float: left;
+            width: 50%;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 10px;
+            background: var(--theme-button-color);
+        }
+
+            .fest-item li:not(:last-child) {
+                border-right: 1px dashed var(--theme-font-color);
+            }
+
+            .fest-item li:hover {
+                background: var(--theme-color) !important;
+                transition: .5s;
+            }
+
+    .active {
+        background: var(--theme-color) !important;
+    }
+
+    .list-container-fest{
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 200px;
+        padding-right: 10px;
+    }
+
+    .list-group {
+        display: none;
+    }
+
+    .list-group-visible {
+        display: block !important;
+    }
+    .list-group-visible .list-group-item
+    {
+        text-decoration:none;
+    }
+</style>
+<script src="~/js/PartialView/FestHoliday.js"></script>
+<div class="row">
+    <div class="col-12">
+        <ul class="fest-item">
+            <li data-id="1">Festival</li>
+            <li data-id="2">Holiday</li>
+        </ul>
+    </div>
+    <div class="col-12">
+        <div class="list-container-fest">
+            <div data-id="1" class="list-group group-listed list-group-visible">
+                <a class="list-group-item" href="">Sharad Navratri @DateTime.Now.Year</a>
+                <a class="list-group-item" href="">Dussehra @DateTime.Now.Year</a>
+                <a class="list-group-item" href="">Karwa Chauth @DateTime.Now.Year</a>
+                <a class="list-group-item" href="">Diwali @DateTime.Now.Year</a>
+                <a class="list-group-item" href="">Chhath Puja @DateTime.Now.Year</a>
+            </div>
+            <div data-id="2" class="list-group group-listed">
+                <a class="list-group-item" href="">Black Friday</a>
+                <a class="list-group-item" href="">Halloween</a>
+                <a class="list-group-item" href="">New Year's Eve</a>
+                <a class="list-group-item" href="">Labor Day</a>
+                <a class="list-group-item" href="">Thanksgiving Day</a>
+                <a class="list-group-item" href="">Columbus Day</a>
+                <a class="list-group-item" href="">Christmas Eve</a>
+                <a class="list-group-item" href="">Christmas Day</a>
+                <a class="list-group-item" href="">Election Day</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using BJK.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using BJK.BusinessLayer;
 
 namespace BJK
 {
@@ -28,6 +29,11 @@ namespace BJK
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var emailConfig = Configuration
+        .GetSection("EmailConfiguration")
+        .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

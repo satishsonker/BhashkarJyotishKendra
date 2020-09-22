@@ -1,0 +1,64 @@
+<style>
+    .subscribe-item {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 13px;
+        color: var(--theme-font-color);
+    }
+
+        .subscribe-item li {
+            float: left;
+            width: 50%;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 10px;
+            background: var(--theme-button-color);
+        }
+
+            .subscribe-item li:not(:last-child) {
+                border-right: 1px dashed var(--theme-font-color);
+            }
+
+            .subscribe-item li:hover {
+                background: var(--theme-color) !important;
+                transition: .5s;
+            }
+
+    .active {
+        background: var(--theme-color) !important;
+    }
+
+    .list-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 200px;
+        padding-right: 10px;
+    }
+
+    .list-group {
+        display: none;
+    }
+
+    .list-group-visible {
+        display: block !important;
+    }
+</style>
+<script src="~/js/PartialView/Reports.js"></script>
+<div class="row">
+   
+    <div class="col-12">
+        <div class="list-container">
+            <ul data-id="1" class="list-group group-listed list-group-visible">
+                <li><input type="radio" name="reports" /> @DateTime.Now.Year Personalized Horoscope</li>
+                <li><input type="radio" name="reports" /> Marriage Report</li>
+                <li><input type="radio" name="reports" /> Career / Job</li>
+                <li><input type="radio" name="reports" /> Finance</li>
+                <li><input type="radio" name="reports" /> Health & Fitness</li>
+            </ul>
+            <div class="" style="text-align:right;padding:10px;">
+                <button class="bjk-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+</div>

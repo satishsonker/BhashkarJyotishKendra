@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .contact .socialsite {
+        font-size: 31px;
+        margin-top: 10px;
+    }
+
+    .contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: var(--theme-font-color)
+    }
+
+    .contact-secure {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: var(--theme-font-color);
+        font-size:11px;
+        text-align:center;
+        vertical-align:middle;
+    }
+    .contact-secure p{
+        margin:10px 0;
+    }
+
+    .contact li {
+        line-height: 24px;
+    }
+
+            .contact li a {
+                color: var(--theme-font-color);
+                text-decoration: none;
+            }
+
+            .contact li i {
+                margin: 0 10px;
+                width: 12px;
+            }
+
+            .contact li:last-child {
+                margin-bottom: 20px;
+            }
+</style>
+<div class="breadcrumb-container">
+    <div class="breadcrumb-data-1">
+        <div class="row">
+            <div class="col-md-6 col-5">
+                <div class="breadcrumb-data-3">
+                    <h3>Contact Us</h3>
+                </div>
+            </div>
+            <div class="col-md-6 col-7">
+                <div class="breadcrumb-data-2 d-none d-sm-block">
+                    <ul>
+                        <li><a href="/home/index">Home</a></li>
+                        <li><span>/</span></li>
+                        <li><p>Contact Us</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-data-container">
+    <iframe class="box-container" style="width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900.8530142157672!2d81.91059062915548!3d25.424483998986943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854b8096d56963%3A0x5b332e5b16e2f7b6!2sBhaskar%20Jyotishya%20Kendra!5e0!3m2!1sen!2sin!4v1580199959525!5m2!1sen!2sin" frameborder="0" allowfullscreen=""></iframe>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="box-container">
+                <h4>Contact Form</h4>
+                <partial name="_ContactFormPartial" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="box-container">
+                <h4>Other Contact Channels</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="contact">
+                            <li><i class="fas fa-home"></i> 6/121, Awas Vikas Colony, Jhusi Prayagraj, UP, India</li>
+                            <li><i class="fas fa-mobile-alt"></i> <a href="tel:+91-8787250204">8787250204</a>,<a href="tel:+91-8896497399"> 8896497399</a></li>
+                            <li><i class="fas fa-envelope"></i> <a style="word-break: break-all;" href="mailto:support@letspaintcreative.com">support@letspaintcreative.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h4>Keep in Touch</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="contact">
+                            <li class="socialsite">
+                                <a href="https://api.whatsapp.com/send?phone=918896497399&amp;fbclid=IwAR234xKxG9fN5wnloC0-2rE1Fxe5zk1K8bwU3Fov1gyPe2u0N7zw4Lb2fHU" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+                                <a href="https://www.facebook.com/bhaskar.jyotishkendra.5" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/letspaintcreative/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://m.me/letspaintcreative" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://twitter.com/LetsPaintCreat1" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                                <a href="tel:+91-9891674974" class="mobile"><i class="fas fa-phone-square-alt"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h4>Secure</h4>
+                <div class="row contact-secure">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <span class="fa-stack fa-2x">
+                            <i class="fas fa-sync-alt  fa-stack-2x"></i>
+                            <i class="fas fa-rupee-sign  fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <p>Money Back Guarantee</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <span class="fa-stack fa-2x">
+                            <i class="fas fa-certificate  fa-stack-2x" style="color:brown;"></i>
+                            <i class="fas fa-check  fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <p>Verified Expert Astrologers</p>
+                    </div>                    
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <span class="fa-stack fa-2x">
+                            <i class="fas fa-user-secret  fa-stack-2x" style="color:cornflowerblue;"></i>
+                        </span>
+                        <i class="fas fa-file fa-2x"></i>
+                        <p>Privacy Guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

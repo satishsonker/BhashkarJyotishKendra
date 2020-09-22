@@ -1,0 +1,66 @@
+<style>
+    .dx-fieldset {
+        margin: 5px 0;
+    }
+
+    .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button), .dx-field-value-static {
+        width: 100%;
+    }
+
+    .dx-texteditor-container {
+        background: var(--theme-font-color);
+    }
+
+    .subscribe-item {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 13px;
+        color: var(--theme-font-color);
+    }
+        .subscribe-item li {
+            float: left;
+            width: 50%;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 10px;
+            background: var(--theme-button-color);
+        }
+
+            .subscribe-item li:not(:last-child) {
+                border-right: 1px dashed var(--theme-font-color);
+            }
+            .subscribe-item li:hover {
+                background: var(--theme-color) !important;
+                transition:.5s;
+            }
+        .active{
+            background:var(--theme-color) !important;
+        }
+
+</style>
+<script src="~/js/PartialView/Subscribe.js"></script>
+<div class="row">
+    <div class="col-12">
+        <ul class="subscribe-item">
+            <li>News Letter</li>
+            <li>Daily Horoscope</li>
+        </ul>
+    </div>
+    <div class="col-12">
+        <form id="frmSubscribe">
+            <div class="row">
+                <div class="col-md">
+                    <div class="dx-fieldset">
+                        <div class="dx-field">
+                            <div class="dx-field-value">
+                                <div id="txtEmainSubscribe"></div>
+                                <div id="btnfrmSubcribe" class="bjk-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>

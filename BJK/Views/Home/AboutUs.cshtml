@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "About Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .para {
+        text-align: justify;
+        font-size: 14px;
+        color: var(--theme-font-color);
+    }
+</style>
+<div class="breadcrumb-container">
+    <div class="breadcrumb-data-1">
+        <div class="row">
+            <div class="col-md-6 col-5">
+                <div class="breadcrumb-data-3">
+                    <h3>About Us</h3>
+                </div>
+            </div>
+            <div class="col-md-6 col-7">
+                <div class="breadcrumb-data-2 d-none d-sm-block">
+                    <ul>
+                        <li><a href="/home/index">Home</a></li>
+                        <li><span>/</span></li>
+                        <li><p>About Us</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-data-container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="box-container">
+                <h4>About Us</h4>
+                <p class="para">Bhashkar Jyotish Kendre is one of the most authentic astrology destinations for not only those who are seeking astrological assistance, but also for high-level astrological research and development on wide scale. It is a prolific astrological source for people to help them out from mundane questions to specialized queries. Our aim is to ameliorate those who are facing problems and betterment of humanity using divine science of astrology.</p>
+                <p class="para">Keeping this all-embracing vision in mind, renowned astrologer Aacharya Akshay Shukla embarked BhashkarJyotishKendre.com in year 2017 to put astrological wisdom for help of ailing mankind. He is an astute and experienced astrologer himself and understands how different astrological systems like KP, Lal Kitab and Nadi etc can be applied into different situations to get practically viable results. The Bhashkar Jyotish Kendre team that works in his guidance consists of many expert astrologers pertaining to different schools of astrology.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-container">
+                        <h4>Subscribe</h4>
+                        <partial name="_SubscribePartial" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="box-container">
+                        <h4>Festival &amp; Holiday</h4>
+                        <partial name="_HolidayFestivalPartial" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="box-container">
+                        <h4>Reports</h4>
+                        <partial name="_ReportsPartial" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

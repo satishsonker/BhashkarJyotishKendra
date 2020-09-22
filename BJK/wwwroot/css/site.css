@@ -3,6 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 :root {
     --theme-color: #170135;
     --theme-font-color:white;
+    --theme-button-color:purple;
 }
 a.navbar-brand {
   white-space: normal;
@@ -284,3 +285,116 @@ header nav
     bottom: 0;
     right: 0;
 }
+
+.bjk-button {
+    border-radius: 4px;
+    background-color: var(--theme-button-color);
+    border: none;
+    color: var(--theme-font-color);
+    text-align: center;
+    font-size: 18px;
+    width: 152px;
+    transition: all 0.5s;
+}
+
+.bjk-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bjk-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+
+.bjk-button:hover span {
+    padding-right: 25px;
+}
+
+    .bjk-button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+
+.breadcrumb-data-1 {
+}
+
+.breadcrumb-data-2 ul {
+    padding: 0px;
+    margin: 0px;
+    float: right;
+}
+
+    .breadcrumb-data-2 ul li:first-child {
+        padding-left: 0px;
+    }
+
+    .breadcrumb-data-2 ul li {
+        float: left;
+        list-style: none;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+
+        .breadcrumb-data-2 ul li a {
+            color: #1b429a;
+            margin-bottom: 0px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 28px;
+            text-decoration: none;
+            color: var(--theme-font-color) !important;
+        }
+
+        .breadcrumb-data-2 ul li span {
+        }
+
+        .breadcrumb-data-2 ul li p {
+            color: #1b429a;
+            margin-bottom: 0px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 28px;
+            color: var(--theme-font-color) !important;
+        }
+
+.breadcrumb-data-3 h3 {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1b429a;
+    padding-top: 5px;
+    margin-bottom: 0px;
+    color: var(--theme-font-color) !important;
+}
+
+.breadcrumb-container {
+    border: 1px solid var(--theme-button-color);
+    background: var(--theme-button-color);
+    border-radius: 4px;
+    margin: 0 10px 20px 10px;
+    padding:9px 20px;
+    color: var(--theme-font-color) !important;
+    line-height: 24px;
+}
+
+.page-data-container {
+    margin: 0 10px 20px 10px;
+}
+.box-container {
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+    padding:10px;
+}
+    .box-container h4 {
+        font-size: 15px;
+        background-image: linear-gradient(90deg, #390680,#1701357a);
+        padding: 5px 10px;
+    }

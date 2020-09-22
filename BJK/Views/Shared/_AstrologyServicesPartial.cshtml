@@ -1,28 +1,56 @@
 <style>
-    .services
-    {
+    .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button), .dx-field-value-static {
+        width: 100% !important;
+    }
 
+    .services-container-layoverText {
+        position: absolute;
+        width: 100%;
+        color: white;
+        top: 136px;
+        background: #00000096;
+        text-align: center;
+        padding-right: 31px;
+        line-height: 30px;
     }
-    .services-container
-    {
-        border:1px solid gray;
-        padding:5px;
-        border-radius:4px;
+
+    .dx-fieldset {
+        margin: 5px 0;
     }
+
+    .services {
+        overflow-x: hidden;
+    }
+
+    .services-container {
+        border: 1px solid gray;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
     .services-container-inner {
-        height: 250px;
-        overflow-y: scroll;
+        height: 350px;
+        overflow-y: auto;
         overflow-x: hidden;
         padding-right: 8px;
         margin-top: 10px;
     }
+
     .services-container img {
         width: 100%;
         height: 150px;
         border-radius: 4px 4px 0 0;
     }
+
     .services-col {
         padding: 10px;
+    }
+    .services-container-inner-heading {
+        color: var(--theme-font-color);
+        text-align: center;
+        margin: 0;
+        padding: 2px 0;
+        font-size: 13px;
     }
 
     .services-container-inner .list-group {
@@ -35,16 +63,19 @@
             cursor: pointer;
         }
 
-        .services-container-inner .list-group .list-group-item:hover{
-            background:var(--theme-color);
-            color:var(--theme-font-color);
-        }
+            .services-container-inner .list-group .list-group-item:hover {
+                background: var(--theme-color);
+                color: var(--theme-font-color);
+            }
 </style>
+
+<script src="~/js/PartialView/AstroServices.js"></script>
 <div class="container">
     <div class="row services">
         <div class="col-lg-4 col-md-6 col-sm-12 services-col">
             <div class="services-container">
-                <img src="~/Images/Carosel/4th-banner.jpg" />
+                <span class="services-container-layoverText">Yearly Horoscope</span>
+                <img src="~/Images/Posters/horoscope.webp" />
                 <div class="services-container-inner">
                     <ul class="list-group">
                         <li class="list-group-item">Aries - @DateTime.Now.Year</li>
@@ -65,14 +96,178 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 services-col">
             <div class="services-container">
-                <img src="~/Images/Carosel/4th-banner.jpg" />
-                <div class="services-container-inner"></div>
+                <span class="services-container-layoverText">Get Your Kundali</span>
+                <img src="~/Images/Posters/Kundali.webp" />
+                <form id="frmSendKundali">
+                    <div class="services-container-inner">
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtName"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtEmail"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtMobile"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtDob"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtTime"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtPlace"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="ddlGender"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">                           
+                            <div class="col-md">
+                                <div style="text-align:right;width:100%;margin: 11px 0;">
+                                    <div id="btnfrmSendKundali" class="bjk-button"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 services-col">
             <div class="services-container">
-                <img src="~/Images/Carosel/4th-banner.jpg" />
-                <div class="services-container-inner"></div>
+                <span class="services-container-layoverText">Kundali Matching</span>
+                <img src="~/Images/Posters/kundali-milan.jpg" />
+                <form id="frmKundaliMatching">
+                    <div class="services-container-inner">
+                        <p class="services-container-inner-heading">Enter Boy details here</p>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtKMMobile"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtKMEmail"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtBoyName"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">                           
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtBoyTime"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtBoyDob"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="dx-fieldset">
+                                    <div class="dx-field">
+                                        <div class="dx-field-value">
+                                            <div id="txtBoyPlace"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <p class="services-container-inner-heading">Girls Details on next Screen</p>
+                                <div style="text-align:right;width:100%;margin: 11px 0;">
+                                    <div id="btnNextKM" class="bjk-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

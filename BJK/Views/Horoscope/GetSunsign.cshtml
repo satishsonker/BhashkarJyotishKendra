@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewData["Title"] = "Horoscope";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+
+    List<string> months = new List<string>() { "January", "Fabruary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    DayOfWeek Day = DateTime.Now.DayOfWeek;
+    int Days = Day - DayOfWeek.Monday; //here you can set your Week Start Day
+    DateTime WeekStartDate = DateTime.Now.AddDays(-Days);
+    DateTime WeekFirstDate = WeekStartDate;
+    DateTime WeekLastDate = WeekStartDate.AddDays(6);
+    string _sunsignImage = ViewBag.sunsign.ToString() + ".png";
+}
+<link href="~/css/Horoscope/GetSunsign.css" rel="stylesheet" />
+<script src="~/js/Horoscope/GetSunsign.js"></script>
+<div class="breadcrumb-container">
+    <div class="breadcrumb-data-1">
+        <div class="row">
+            <div class="col-md-6 col-5">
+                <div class="breadcrumb-data-3">
+                    <h3>@ViewBag.feq.ToString().ToUpper() Horoscope</h3>
+                </div>
+            </div>
+            <div class="col-md-6 col-7">
+                <div class="breadcrumb-data-2 d-none d-sm-block">
+                    <ul>
+                        <li><a href="/home/index">Home</a></li>
+                        <li><span>/</span></li>
+                        <li><p>Horoscope</p></li>
+                        <li><span>/</span></li>
+                        <li><p>@ViewBag.feq.ToString().ToUpper() Horoscope</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-data-container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="box-container">
+                <h4>@ViewBag.feq.ToString().ToUpper() @ViewBag.sunsign.ToString().ToUpper() Horoscope (@DateTime.Now.ToLongDateString())</h4>
+                <div class="horo-feq row">
+                    <ul data-inputkey="@ViewBag.feq.ToString().ToLower()">
+                        <li data-key="daily">Daily</li>
+                        <li data-key="weekly">Weekly</li>
+                        <li data-key="monthly">Monthly</li>
+                        <li data-key="Yearly">Yearly</li>
+                    </ul>
+                </div>
+                <div class="horo-content" data-key="daily">
+                    <p class="sunsign-image"><img src="~/Images/SunSigns/@_sunsignImage" /> <span>Period - @DateTime.Now.ToLongDateString()</span></p>
+                    <p>As Moon positions itself in Scorpio, today you may feel pressure coming from many sides, both on the personal and professional front. Your best bet today is to just be accountable for your actions and be honest, suggest Astroyogi astrologers. Do not worry as this time of high pressure will pass and you will feel that work and your domestic sphere are back to normal again. It is recommended that you wear the color Turquoise to stay in a positive frame of mind and the time between 7.45 pm to 8.45 pm is considered to be your luckiest hour of the day. </p>
+                </div>
+                <div class="horo-content" data-key="weekly">
+                    <p  class="sunsign-image"><img src="~/Images/SunSigns/@_sunsignImage" /> <span> Period - @WeekFirstDate.ToShortDateString() - @WeekLastDate.ToShortDateString()</span></p>
+                    <p>
+                        @months[@DateTime.Now.Month - 1]) (@DateTime.Now.Year.ToString())Channel your natural sense of diplomacy this week to avoid getting into conflict at the workplace. Your temper may be overly active and quick to flair and work is not the place for you to lose your cool! Just be mindful that your energy may be a little challenging to manage and you should be able to keep on top of things. Your interest in spiritual matters is strong and you’ll be exploring what this field means to you and how you can incorporate it into your daily life. Exciting and evolving times lay ahead for you dear Libra!
+                    </p>
+                </div>
+                <div class="horo-content" data-key="monthly">
+                    <p class="sunsign-image"><img src="~/Images/SunSigns/@_sunsignImage" /> <span>Period - @months[@DateTime.Now.Month - 1]</span></p>
+                    <p>With Venus in Cancer your professional life is boosted and you absolutely shine at the workplace and perform tasks with calm composure. Others appreciate your presence which seems to lend harmony and grace to the environment. You’ll have sound judgement and there may be some work related good news.On the 22nd, Mercury moves into Libra and triggers expansion and an interest in spiritual matters as well as a quickened temper which can lead to conflict. Use your famous diplomatic streak to ease muddy waters. On the 28th, Venus moves into Leo which prompts the beginnings of an excellent time. Your health is perfect and financially this is a very good time. You may consider investing. Romance is in the air and if coupled marriage may be the next logical step especially if you have plans for a family. Mercury in Virgo can trigger expenses to rise up and bring about some small instances of unfavourable luck. At work you may procrastinate and lack concentration, finding yourself unable to finish what you’ve started. This month can cause mental tension and storms in your personal life. </p>
+                </div>
+                <div class="horo-content" data-key="Yearly">
+                    <p class="sunsign-image"><img src="~/Images/SunSigns/@_sunsignImage" /> <span>Period - @DateTime.Now.Year.ToString()</span></p>
+                    <p>The horoscope 2020 readings for Libra suggests that the lord Venus of the zodiac is sitting in the 4th place, and this arrangement proves to be very good for you. You will experience happiness and prosperity all around you. You could buy a&nbsp; house, vehicle, and more. You will also be romantically blessed and enjoy a good time with your partner. The 3rd house has positive outcomes for you and the impact of this will be that you journey a lot during this time. You will have good tuning with your younger siblings.&nbsp;</p>
+
+                    <p>The presence of Mars in the 2nd house will create chances of acquiring money from different sources. You might also attain ancestral property during this time.</p>
+                    <p>This year Saturn is also changing the zodiac sign. Saturn's change is expected to be beneficial for you because Saturn is going to be placed at the center of your chart. Being in the 4th house Saturn will create auspicious opportunities for your children.</p>
+
+                    <p>Astroyogi suggests that you need to keep a regular check on your day to day life and make use of your day in a planned manner to achieve maximum out of it. </p>
+
+                    <p>On March 30, Jupiter will enter into Capricorn, which is the place of happiness from your zodiac. There may be a negative impact for you due to the low intensity of the transition but due to the presence of Saturn, favorable circumstances is created and this will benefit you in the form of maternal happiness, property happiness, vehicle, etc.</p>
+
+                    <p>Saturn will go retrograde on May 11th. At this time you can lose respect and dignity. Saturn has its vision on your workplace as well. Saturn’s vision in your 10th place will give you new energy and outlook of your work and life. Even if you have problems, you will be able to overcome all of that. Saturn will turn progressive on September 29 after which the situation will gradually change.</p>
+
+                    <p>On May 14th, Jupiter will turn retrograde, and the impact of this will be that you may travel abroad, either for business, pilgrimage trips, or on a spiritual journey. Chances of a marriage may also be present. You will feel a significant increase in your power and enthusiasm. All kinds of future plans, ideas and schemes will be born in your mind.</p>
+
+                    <p>Jupiter will change to Sagittarius on 30th June and this change will result in good things for you. Given the vision of Jupiter on your house of profit, you will find sources of income from everywhere. On the 13th of September, Jupiter will go retrograde and this will give you beneficial results. You will see a significant increase in your productivity. This is the time to realize the seriousness of the ideas that you have been having in your mind, this is the time to work on it. You will need to be aware of your friends and enemies and be a little careful when around them. Try not to talk about your plans to anyone at this point.</p>
+
+                    <p>On 20th November, Jupiter will move to Capricorn. There may be a negative impact on your life due to the low degree of the planet, but due to the presence of Saturn, favorable circumstances will benefit you in the form of maternal happiness, property happiness, vehicle, etc.</p>
+
+                    <p>Rahu will be placed in Gemini at the beginning of the year. Just like last year, due to the presence of Rahu, the obstacles and hindrances that were faced by you will still persist but by the middle of the year, as soon as Rahu changes and moves to Taurus, you will see a gradual growth in your life. But being hasty at the moment and taking any decision in a hurry can be very bad for you, try to avoid this.&nbsp;</p>
+
+                    <p>Ketu will be in Sagittarius at the beginning of the year, along with Mercury, Jupiter Sun and Saturn. The effect of this will bring you mixed results. By the middle of the year, Ketu will enter into Scorpio, which is considered to be of the highest importance. With the movement of Ketu in the 2nd house, you can expect to get unexpected finances or ancestral property. If you have been in any kind of legal dispute for a long time with the people within the family, then try to resolve it now, as the results are expected to be in your favor.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="box-container">
+                <partial name="_HoroscopePartial" />
+            </div>
+        </div>
+    </div>
+</div>
