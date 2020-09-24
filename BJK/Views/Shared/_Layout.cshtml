@@ -33,7 +33,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
-    <script src="~/js/Common/Constants.js"  asp-append-version="true"></script>
+    <script src="~/js/Common/Constants.js" asp-append-version="true"></script>
     <script src="~/js/Common/common.js" asp-append-version="true"></script>
     <script src="~/js/Common/api.js" asp-append-version="true"></script>
     <script src="~/js/Common/apiUrls.js" asp-append-version="true"></script>
@@ -58,10 +58,14 @@
     <div class="twinkling"></div>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
-            <div class="container">
+            <div class="container" style="padding:0;margin:0;">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <img class="logo" src="~/Images/logo/logo_sm.jpg" alt="Logo" />
-                Bhashkar Jyotish Kendra</a>
+                    <img class="logo" src="~/Images/logo/logo_sm.jpg" alt="Logo" />
+                    Bhashkar<span style="position: absolute;
+    left: 72px;
+    top: 45px;
+    font-size: 12px;">Jyotish Kendra</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars font-color"></i>
@@ -71,6 +75,9 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Astrology" asp-action="Astrologers">Astrologers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
@@ -175,16 +182,38 @@
         </div>
     </div>
     @*<footer class="">
-        <ul>
-            <li></li>
-        </ul>
-        <div class="container">
-            &copy; 2020 - BJK - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>*@
+            <ul>
+                <li></li>
+            </ul>
+            <div class="container">
+                &copy; 2020 - BJK - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
 
 
 
-    
+
 </body>
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '{your-app-id}',
+            cookie: true,
+            xfbml: true,
+            version: '{api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 </html>
