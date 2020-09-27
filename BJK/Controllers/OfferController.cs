@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BJK.Controllers
 {
-    public class PoojaController : Controller
+    public class OfferController : Controller
     {
         public IActionResult List()
         {
