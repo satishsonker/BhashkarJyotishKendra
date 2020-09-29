@@ -1,0 +1,137 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<style>
+    .bjk-login-container {
+        min-height: 50vh;
+        padding: 10px 20px;
+        margin-top:51px;
+    }
+
+    .bjk-login-logo {
+        width: 100%;
+        text-align: center;
+    }
+
+        .bjk-login-logo img {
+            border-radius: 50px;
+            height: 11vh;
+            margin-top: 10px;
+        }
+
+    .bjk-login-ctrl {
+    }
+
+    .login-lbl {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        color: var(--them-font-color);
+        font-size: 12px;
+    }
+
+    .bjk-login-logo p {
+        border-bottom: 1px solid var(--theme-font-color);
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+
+    .wrapper {
+        position: relative;
+    }
+
+    .right, .left {
+        width: 50%;
+        position: absolute;
+    }
+
+    .right {
+        right: 0;
+        text-align: right;
+    }
+
+    .left {
+        left: 0;
+    }
+</style>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 offset-md-3 offset-lg-3">
+        <div class="bjk-login-container">
+            <div class="bjk-login-logo">
+                <img src="~/Images/logo/logo_sm.jpg" alt="Bhakshkar Jyotish Kendra Logo" />
+                <p>Bhakshkar Jyotish Kendra</p>
+            </div>
+            <div class="bjk-login-ctrl">
+                <section>
+
+                    <p class="login-lbl">Use a local account to log in.</p>
+                    @{
+                        string icon = "";
+                        @if ((Model.ExternalLogins?.Count ?? 0) > 0)
+                        {
+                            <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                <div>
+                                    <p>
+                                        <div class="wrapper" style="height:33px;">
+                                            @foreach (var provider in Model.ExternalLogins)
+                                            {
+                                                icon = provider.Name == "Facebook" ? "fa-facebook-square" : "fa-google";
+
+                                                if (provider.Name == "Google")
+                                                {<div class="left"> <button style="width:130px" type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab @icon"></i> @provider.DisplayName</button></div>}
+                                            if (provider.Name == "Facebook")
+                                            {<div class="right"> <button style="width:130px" type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab @icon"></i> @provider.DisplayName</button></div>}
+
+                                    }
+                                        </div>
+                                    </p>
+                                </div>
+                            </form>
+                        }
+                    }  <form id="account" method="post">
+                        <div asp-validation-summary="All" class="text-danger bjk-mobile-hide"></div>
+                        <div class="form-group">
+                            <label class="bjk-mobile-hide" asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="bjk-mobile-hide" asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+
+                        </div>
+                        <div class="wrapper" style="height:40px;">
+                            <div class="left">
+                                <div class="checkbox">
+                                    <label asp-for="Input.RememberMe">
+                                        <input asp-for="Input.RememberMe" />
+                                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                    </label>
+                                    <div class="form-group" style="text-align:right;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right"> <button type="submit" class="btn btn-primary">Log in</button></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="wrapper">
+                                <div class="left"><a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a></div>
+                                <div class="right"><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

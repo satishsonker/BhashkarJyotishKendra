@@ -12,5 +12,11 @@ namespace BJK.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult AstrologersProfile([FromQuery] int astroid)
+        {
+            return View();
+        }
     }
 }

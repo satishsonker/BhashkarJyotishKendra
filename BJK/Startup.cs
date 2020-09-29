@@ -29,6 +29,16 @@ namespace BJK
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = "24547901110-7vi0trh4h35fqvu7qmq36ohodcob7feh.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "YnWs_8dG3e1LYRjbJUFRHYuc";
+            }).AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = "783900929099047";
+                facebookOptions.AppSecret = "529f622944656c5bfa434eecf3f7184f";
+            });
+
             var emailConfig = Configuration
         .GetSection("EmailConfiguration")
         .Get<EmailConfiguration>();
@@ -49,15 +59,7 @@ namespace BJK
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddAuthentication().AddGoogle(googleOptions =>
-            {
-                googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-                googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-            }).AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            }); ;
+           
 
         }
 
